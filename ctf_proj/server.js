@@ -10,7 +10,6 @@ var con = mysql.createConnection({
 });
 
 con.connect(function(err) {
-  // Silent failing - removed throw err
   console.log("Connected!");
 });
 
