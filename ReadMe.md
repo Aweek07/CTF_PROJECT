@@ -52,7 +52,7 @@ Most security platforms have a steep learning curve. Our project is different be
     
 - List of all technologies we used to make the app
     
-- Explanation why our website is easier than TryHackMe or HackTheBox
+- Explanation about  our website being easier than TryHackMe or HackTheBox
     
 
 ### Page 2 - The Game
