@@ -1,12 +1,42 @@
-export default function EndPage({ timeTaken, onBackToQuestions }) {
+export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
   // Format milliseconds into mm:ss
   const formatTime = (ms) => {
-    if (!ms) return "00:00";
-    const totalSeconds = Math.floor(ms / 1000);
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    if (ms === null || ms === undefined) {
+      return "00:00";
+    }
+    
+    let totalSeconds = ms / 1000;
+    let roundedSeconds = Math.floor(totalSeconds);
+    
+    let minutes = roundedSeconds / 60;
+    let roundedMinutes = Math.floor(minutes);
+    
+    let leftoverSeconds = roundedSeconds % 60;
+    
+    let displayMinutes = roundedMinutes.toString();
+    if (displayMinutes.length === 1) {
+      displayMinutes = "0" + displayMinutes;
+    }
+    
+    let displaySeconds = leftoverSeconds.toString();
+    if (displaySeconds.length === 1) {
+      displaySeconds = "0" + displaySeconds;
+    }
+    
+    return displayMinutes + ":" + displaySeconds;
   };
+
+  let scoreSection = null;
+  if (finalScore !== null && finalScore !== undefined) {
+    scoreSection = (
+      <div>
+        <h2 style={{ marginTop: '2rem' }}>Final Score</h2>
+        <div className="time-taken">
+          {finalScore.score} / {finalScore.total}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="end-section">
@@ -15,6 +45,8 @@ export default function EndPage({ timeTaken, onBackToQuestions }) {
       <div className="stats-box">
         <h2>Time Elapsed</h2>
         <div className="time-taken">{formatTime(timeTaken)}</div>
+        
+        {scoreSection}
       </div>
 
       <div>
