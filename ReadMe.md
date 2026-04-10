@@ -103,7 +103,7 @@ Most security platforms have a steep learning curve. Our project is different be
     npm start
     ```
 
-4. **Start the SQL server*(first open another terminal inside the application directory
+4. **Start the SQL server**(first open another terminal inside the application directory
 
     Bash
     
