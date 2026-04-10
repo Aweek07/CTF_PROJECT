@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Intro from './Intro';
 import Challenges from './Challenges';
 import EndPage from './EndPage';

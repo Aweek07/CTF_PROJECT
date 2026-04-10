@@ -21,7 +21,6 @@ export default function Intro({ onStart }) {
           <li>React</li>
           <li>NodeJS</li>
           <li>SQL</li>
-          <li>Vue</li>
         </ul>
       </div>
 
