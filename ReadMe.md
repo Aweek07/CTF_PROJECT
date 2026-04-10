@@ -14,7 +14,7 @@ This project is an educational tool. We believe that understanding how informati
 
 ---
 
-## Innovation points
+## Innovation
 
 Most security platforms have a steep learning curve. Our project is different because::
 
