@@ -1,5 +1,4 @@
 export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
-  // Format milliseconds into mm:ss
   const formatTime = (ms) => {
     if (ms === null || ms === undefined) {
       return "00:00";
@@ -59,9 +58,10 @@ export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
       <div>
         <h2>Credits</h2>
         <ul className="tech-list" style={{ marginTop: '1rem' }}>
-          <li>Author 1 [Placeholder]</li>
-          <li>Author 2 [Placeholder]</li>
-          <li>Author 3 [Placeholder]</li>
+          <li>Smit Vartak (K075)</li>
+          <li>Abheek Mahapatra (K046)</li>
+          <li>Sarthak Vikas(K077)</li>
+          <li>Swara Pawde (K0__)</li>
         </ul>
       </div>
 

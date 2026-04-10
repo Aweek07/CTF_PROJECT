@@ -66,8 +66,6 @@ export default function Challenges({ onSubmit, onBack }) {
     let newAnswers = Object.assign({}, answers);
     newAnswers[id] = val;
     setAnswers(newAnswers);
-    
-    // Clear validation result on new typing
     if (results[id] !== undefined) {
       let newResults = Object.assign({}, results);
       newResults[id] = undefined;

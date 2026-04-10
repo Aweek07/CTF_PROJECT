@@ -10,12 +10,11 @@ var con = mysql.createConnection({
 });
 
 con.connect(function(err) {
-  if (err) throw err;
+  // Silent failing - removed throw err
   console.log("Connected!");
 });
 
 const server = http.createServer((req, res) => {
-  // Manually handling CORS (what the 'cors' package did)
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, POST, GET');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -26,17 +25,14 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Helper function to send JSON responses easily
   const sendJson = (statusCode, data) => {
     res.writeHead(statusCode, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(data));
   };
 
-  // Route: POST /api/validate
   if (req.method === 'POST' && req.url === '/api/validate') {
     let body = '';
     
-    // Manually parsing the JSON body (what express.json() did)
     req.on('data', chunk => {
       body += chunk.toString();
     });
@@ -47,15 +43,12 @@ const server = http.createServer((req, res) => {
         const userAnswers = reqBody.answers; 
         
         if (!Array.isArray(userAnswers)) {
-          return sendJson(400, { error: 'Invalid payload' });
+          return sendJson(200, { score: 0, total: 0 });
         }
 
         var sql = "select * from answers";
         con.query(sql, function(err, result) {
-          if (err) {
-            console.error('Database Error:', err);
-            return sendJson(500, { error: 'Server error. Is MySQL running?' });
-          }
+          if (err) return sendJson(200, { score: 0, total: 0 });
 
           const rows = result;
           let score = 0;
@@ -82,12 +75,10 @@ const server = http.createServer((req, res) => {
           sendJson(200, { score: score, total: rows.length });
         });
       } catch (error) {
-        console.error('Error:', error);
-        sendJson(500, { error: 'Server error.' });
+        sendJson(200, { score: 0, total: 0 });
       }
     });
 
-  // Route: POST /api/validate-single
   } else if (req.method === 'POST' && req.url === '/api/validate-single') {
     let body = '';
     
@@ -101,15 +92,12 @@ const server = http.createServer((req, res) => {
         const { id, flag } = reqBody;
         
         if (!id || flag === undefined) {
-          return sendJson(400, { error: 'Invalid payload' });
+          return sendJson(200, { correct: false });
         }
 
         var sql = "select flag from answers where id = ?";
         con.query(sql, [id], function(err, result) {
-          if (err) {
-            console.error('Database Error:', err);
-            return sendJson(500, { error: 'Server error' });
-          }
+          if (err) return sendJson(200, { correct: false });
 
           const rows = result;
 
@@ -129,14 +117,13 @@ const server = http.createServer((req, res) => {
           sendJson(200, { correct: isCorrect });
         });
       } catch (error) {
-        console.error('Error:', error);
-        sendJson(500, { error: 'Server error' });
+        sendJson(200, { correct: false });
       }
     });
 
-  // 404 Route for anything else
   } else {
-    sendJson(404, { error: 'Not found' });
+    res.writeHead(404);
+    res.end();
   }
 });
 
