@@ -122,7 +122,7 @@ Most security platforms have a steep learning curve. Our project is different be
     
 - Sarthak Vikas - **K077**
     
-- Swara Pawde - **K0__**
+- Swara Pawde - **K055**
     
 
 ---
