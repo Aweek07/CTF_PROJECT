@@ -4,7 +4,7 @@
 
 ### SEMESTER 2 TERM END PROJECT - WEB TECHNOLOGIES
 
-This is our project for Web Tech subject in Sem 2. It is an OSINT CTF app made for people who never tried CTFs before. We wanted to make it very simple so non-cybersecurity related people can understand what is OSINT and how to find information online.
+This is our project for the Web Technologies subject in Semester 2. It is an OSINT CTF app made for people who have never tried CTFs before. We wanted to make it very simple so non-cybersecurity-related people can understand what OSINT is and how to find information online.
 
 While traditional CTFs often require complex Linux environments and command-line proficiency, this project bridges the gap by providing a seamless, browser-based experience that focuses on logic, investigation, and digital awareness.
 
@@ -16,13 +16,15 @@ This project is an educational tool. We believe that understanding how informati
 
 ## Innovation
 
-Most security platforms have a steep learning curve. Our project is different because::
+Most security platforms have a steep learning curve. Our project is different because:
 
-- No need to install anything or use terminal, No virtual machines or Linux installations required.
+- No need to install anything or use terminal.
+  
+-No virtual machines or Linux installations required.
     
 - Everything works in the browser.
 
-- OSINT challenges are presented in a clean, terminal-like, modern interface, free from constant distractions and effects which most sites apply to keep you locked in.
+- OSINT challenges are presented in a clean, terminal-like, modern interface, free from constant distractions and effects that most sites apply to keep you locked in.
     
 - It is fun and easy to motivate new people. It doesn’t just test you; it teaches you how your public digital footprint can be traced, promoting personal digital safety.
     
@@ -46,7 +48,7 @@ Most security platforms have a steep learning curve. Our project is different be
 
 ### Page 1 - The Intro
 
-- Short info about what is CTF and OSINT
+- Short info about what CTF and OSINT are
     
 - List of all technologies we used to make the app
     
@@ -59,7 +61,7 @@ Most security platforms have a steep learning curve. Our project is different be
     
 - Cards featuring dynamic input boxes, hint buttons, and character count indicators to guide the user
     
-- Places for links like GitHub and Instagram and photos
+- Places for links like GitHub, Instagram, and photos
     
 - Buttons for downloading photos to check metadata
     
