@@ -6,7 +6,7 @@
 
 This is our project for the Web Technologies subject in Semester 2. It is an OSINT CTF app made for people who have never tried CTFs before. We wanted to make it very simple so non-cybersecurity-related people can understand what OSINT is and how to find information online.
 
-While traditional CTFs often require complex Linux environments and command-line proficiency, this project bridges the gap by providing a seamless, browser-based experience that focuses on logic, investigation, and digital awareness.
+While traditional CTFs often require complex Linux environments and command-line proficiency, this project bridges the gap by offering a seamless, browser-based experience focused on logic, investigation, and digital awareness.
 
 > _"In an era of data transparency, awareness is your best firewall."_
 
