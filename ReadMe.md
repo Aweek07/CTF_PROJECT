@@ -37,8 +37,6 @@ Most security platforms have a steep learning curve. Our project is different be
     
 - React JS
     
-- Vue JS
-    
 - Node JS
     
 - SQL database
