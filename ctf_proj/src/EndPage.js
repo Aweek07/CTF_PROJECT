@@ -61,7 +61,7 @@ export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
           <li>Smit Vartak (K075)</li>
           <li>Abheek Mahapatra (K046)</li>
           <li>Sarthak Vikas(K077)</li>
-          <li>Swara Pawde (K0__)</li>
+          <li>Swara Pawde (K055)</li>
         </ul>
       </div>
 
