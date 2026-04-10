@@ -14,5 +14,5 @@ INSERT INTO answers (id, flag) VALUES
 (3, 'hackocat'),
 (4, 'target@email.com'),
 (5, 'github'),
-(6, 'hack'),
+(6, 'hi'),
 (7, 'flag{123$}');
