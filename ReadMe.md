@@ -95,14 +95,21 @@ Most security platforms have a steep learning curve. Our project is different be
     npm install
     ```
     
-3. **Run the application:**
+3. **Run the application**(first cd into the application directory)
     
     Bash
     
     ```
     npm start
     ```
+
+4. **Start the SQL server*(first open another terminal inside the application directory
+
+    Bash
     
+    ```
+    node server.js
+    ```
 
 
 ---
