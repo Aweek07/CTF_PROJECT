@@ -26,8 +26,6 @@ Most security platforms have a steep learning curve. Our project is different be
     
 - It is fun and easy to motivate new people. It doesn’t just test you; it teaches you how your public digital footprint can be traced, promoting personal digital safety.
     
-- We used React and Vue together to show we can handle complex stuff
-    
 
 ---
 
