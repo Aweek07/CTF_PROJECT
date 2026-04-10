@@ -84,7 +84,7 @@ Most security platforms have a steep learning curve. Our project is different be
     Bash
     
     ```
-    git clone https://github.com/your-username/trace-and-track.git
+    git clone [https://github.com/your-username/trace-and-track.git](https://github.com/Aweek07/CTF_PROJECT.git)
     ```
     
 2. **Install dependencies:**
