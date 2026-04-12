@@ -111,19 +111,19 @@ node server.js
 ```bash
 npm start
 ```
-*The app will automatically open at `http://localhost:3000
+*The app will automatically open at* `http://localhost:3000`
 
 ---
 
 ## The Authors of this project
 
-- *Smit Vartak - **K075**
+- *Smit Vartak* - **K075**
     
-- *Abheek Mahapatra - **K046**
+- *Abheek Mahapatra* - **K046**
     
-- *Sarthak Vikas - **K077**
+- *Sarthak Vikas* - **K077**
     
-- *Swara Pawde - **K055**
+- *Swara Pawde* - **K055**
     
 
 ---
