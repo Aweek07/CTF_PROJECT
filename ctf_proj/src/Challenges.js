@@ -333,12 +333,6 @@ export default function Challenges(props) {
         </div>
         
         <p>Find the final flag located on the target's Instagram account.</p>
-        
-        <div className="link-group">
-          <a href="https://instagram.com/target_account" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
-            [Go to Instagram]
-          </a>
-        </div>
 
         <div className="challenge-controls">
           <input 
