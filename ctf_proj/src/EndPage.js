@@ -29,7 +29,7 @@ export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
   if (finalScore !== null && finalScore !== undefined) {
     scoreSection = (
       <div>
-        <h2 style={{ marginTop: '2rem' }}>Final Score</h2>
+        <h2 style={{ marginTop: '32px' }}>Final Score</h2>
         <div className="time-taken">
           {finalScore.score} / {finalScore.total}
         </div>
@@ -56,8 +56,15 @@ export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
       </div>
 
       <div>
+        <h2>What you can learn from this project</h2>
+        <p>
+          This exercise was designed to demonstrate how much information is publicly available and how easily it can be pieced together using perfectly legal, open-source resources. We encourage you to be mindful of your digital footprint, respect others' privacy, and always act responsibly. Stay safe online.
+        </p>
+      </div>
+
+      <div>
         <h2>Credits</h2>
-        <ul className="tech-list" style={{ marginTop: '1rem' }}>
+        <ul className="tech-list" style={{ marginTop: '16px' }}>
           <li>Smit Vartak (K075)</li>
           <li>Abheek Mahapatra (K046)</li>
           <li>Sarthak Vikas(K077)</li>
@@ -65,15 +72,9 @@ export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
         </ul>
       </div>
 
-      <button className="btn-large" onClick={onBackToQuestions} style={{ marginBottom: '2rem' }}>
+      <button className="btn-large" onClick={onBackToQuestions} style={{ marginBottom: '32px' }}>
         &lt; Back to Questions
       </button>
-
-      <div className="disclaimer">
-        <p>
-          <strong>Security Awareness Notice:</strong> This exercise was designed to demonstrate how much information is publicly available and how easily it can be pieced together using perfectly legal, open-source resources. We encourage you to be mindful of your digital footprint, respect others' privacy, and always act responsibly. Stay safe online.
-        </p>
-      </div>
     </div>
   );
 }
