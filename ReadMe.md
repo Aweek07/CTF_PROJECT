@@ -79,50 +79,51 @@ Most security platforms have a steep learning curve. Our project is different be
 
 ## Setup
 
-1. **Clone the repository:**
-    
-    Bash
-    
-    ```
-    git clone [https://github.com/your-username/trace-and-track.git](https://github.com/Aweek07/CTF_PROJECT.git)
-    ```
-    
-2. **Install dependencies:**
-    
-    Bash
-    
-    ```
-    npm install
-    ```
-    
-3. **Run the application**(first cd into the application directory)
-    
-    Bash
-    
-    ```
-    npm start
-    ```
+### 1. Download Prerequisites
+*   Install **[Node.js](https://nodejs.org)**
+*   Install **[XAMPP](https://www.apachefriends.org/index.html)** (for MySQL Database)
 
-4. **Start the SQL server**(first open another terminal inside the application directory
+### 2. Clone the Project
+```bash
+git clone https://github.com/Aweek07/CTF_PROJECT.git
+cd CTF_PROJECT/ctf_proj
+```
 
-    Bash
-    
-    ```
-    node server.js
-    ```
+### 3. Setup the Database
+1. Open XAMPP and Start the **MySQL** module.
+2. Open your MySQL tool (XAMPP) and import/run the `setup.sql` file.
 
+### 4. Install Dependencies
+```bash
+npm install
+npm install mysql2
+```
+
+### 5. Run the App
+You will need two terminal windows open inside the `ctf_proj` folder:
+
+**Terminal 1 (Backend):**
+```bash
+node server.js
+```
+
+**Terminal 2 (Frontend):**
+```bash
+npm start
+```
+*The app will automatically open at `http://localhost:3000
 
 ---
 
 ## The Authors of this project
 
-- Smit Vartak - **K075**
+- *Smit Vartak - **K075**
     
-- Abheek Mahapatra - **K046**
+- *Abheek Mahapatra - **K046**
     
-- Sarthak Vikas - **K077**
+- *Sarthak Vikas - **K077**
     
-- Swara Pawde - **K055**
+- *Swara Pawde - **K055**
     
 
 ---
@@ -132,3 +133,49 @@ Most security platforms have a steep learning curve. Our project is different be
 **College:** NMIMS MPSTME
 
 **Year:** Semester 2 Submission
+
+
+
+
+
+
+
+
+
+
+
+# Quick Start Guide
+
+### 1. Download Prerequisites
+*   Install **[Node.js](https://nodejs.org)**
+*   Install **[XAMPP](https://www.apachefriends.org/index.html)** (for MySQL Database)
+
+### 2. Clone the Project
+```bash
+git clone https://github.com/Aweek07/CTF_PROJECT.git
+cd CTF_PROJECT/ctf_proj
+```
+
+### 3. Setup the Database
+1. Open XAMPP and Start the **MySQL** module.
+2. Open your MySQL tool (XAMPP) and import/run the `setup.sql` file.
+
+### 4. Install Dependencies
+```bash
+npm install
+npm install mysql2
+```
+
+### 5. Run the App
+You will need two terminal windows open inside the `ctf_proj` folder:
+
+**Terminal 1 (Backend):**
+```bash
+node server.js
+```
+
+**Terminal 2 (Frontend):**
+```bash
+npm start
+```
+*The app will automatically open at `http://localhost:3000`*
