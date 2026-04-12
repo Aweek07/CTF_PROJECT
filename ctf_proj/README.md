@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# TRACE & TRACK OSINT CTF (WT PROJECT)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### SEMESTER 2 TERM END PROJECT - WEB TECHNOLOGIES
 
-In the project directory, you can run:
+This is our project for the Web Technologies subject in Semester 2. It is an OSINT CTF app made for people who have never tried CTFs before. We wanted to make it very simple so non-cybersecurity-related people can understand what OSINT is and how to find information online.
 
-### `npm start`
+While traditional CTFs often require complex Linux environments and command-line proficiency, this project bridges the gap by offering a seamless, browser-based experience focused on logic, investigation, and digital awareness.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> _"In an era of data transparency, awareness is your best firewall."_
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project is an educational tool. We believe that understanding how information is found is the first step toward securing it.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Innovation
 
-### `npm run build`
+Most security platforms have a steep learning curve. Our project is different because:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- No need to install anything or use terminal.
+  
+-No virtual machines or Linux installations required.
+    
+- Everything works in the browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- OSINT challenges are presented in a clean, terminal-like, modern interface, free from constant distractions and effects that most sites apply to keep you locked in.
+    
+- It is fun and easy to motivate new people. It doesn’t just test you; it teaches you how your public digital footprint can be traced, promoting personal digital safety.
+    
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Technologies we used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- HTML and CSS
+    
+- React JS
+    
+- Node JS
+    
+- SQL database
+    
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Website pages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Page 1 - The Intro
 
-## Learn More
+- Short info about what CTF and OSINT are
+    
+- List of all technologies we used to make the app
+    
+- Explanation about  our website being easier than TryHackMe or HackTheBox
+    
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Page 2 - The Game
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 7 gamified questions about OSINT in different cards
+    
+- Cards featuring dynamic input boxes, hint buttons, and character count indicators to guide the user
+    
+- Places for links like GitHub, Instagram, and photos
+    
+- Buttons for downloading photos to check metadata
+    
 
-### Code Splitting
+### Page 3 - Results
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Shows how much time you took and your stats
+    
+- Thank you message
+    
+- Text about how to stay safe online and how to investigate legally
+    
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Setup
 
-### Making a Progressive Web App
+### 1. Download Prerequisites
+*   Install **[Node.js](https://nodejs.org)**
+*   Install **[XAMPP](https://www.apachefriends.org/index.html)** (for MySQL Database)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 2. Clone the Project
+```bash
+git clone https://github.com/Aweek07/CTF_PROJECT.git
+cd CTF_PROJECT/ctf_proj
+```
 
-### Advanced Configuration
+### 3. Setup the Database
+1. Open XAMPP and Start the **MySQL** module.
+2. Open your MySQL tool (XAMPP) and import/run the `setup.sql` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 4. Install Dependencies
+```bash
+npm install
+npm install mysql2
+```
 
-### Deployment
+### 5. Install SQL server
+you will have to install the *SQL community server* if you don't have SQL on your device already.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Install and complete the setup from **[Official SQL]([https://nodejs.org](https://dev.mysql.com/downloads/mysql/8.0.html))** website
 
-### `npm run build` fails to minify
+### 6. Import Answers into SQL server
+you will have to run this in the previously used terminal which is open in the `ctf_proj` directory, and run the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p < setup.sql
+```
+### 7. Run the App
+You will need two terminal windows open inside the `ctf_proj` folder:
+
+**Terminal 1 (Backend):**
+```bash
+node server.js
+```
+
+**Terminal 2 (Frontend):**
+```bash
+npm start
+```
+*The app will automatically open at `http://localhost:3000
+
+---
+
+## The Authors of this project
+
+- *Smit Vartak - **K075**
+    
+- *Abheek Mahapatra - **K046**
+    
+- *Sarthak Vikas - **K077**
+    
+- *Swara Pawde - **K055**
+    
+
+---
+
+**Course:** Web Technologies
+
+**College:** NMIMS MPSTME
+
+**Year:** Semester 2 Submission
+
+
+
+
+
+
