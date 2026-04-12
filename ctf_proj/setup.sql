@@ -11,8 +11,8 @@ TRUNCATE TABLE answers;
 INSERT INTO answers (id, flag) VALUES
 (1, 'pizzaexpress'),
 (2, 'mumbai'),
-(3, 'hackocat'),
-(4, 'target@email.com'),
+(3, 'cat'),
+(4, 'mahapatraabheek0@gmail.com'),
 (5, 'github'),
-(6, 'hi'),
+(6, 'hack'),
 (7, 'flag{123$}');

@@ -192,7 +192,7 @@ export default function Challenges(props) {
         
         {results[2] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[2] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[2] === true ? <div className="visible-hint">Check the photo metadata (EXIF data). Answer is 6 alphabets.</div> : null}
+        {hintsVisible[2] === true ? <div className="visible-hint">Check the photo metadata (EXIF data) or Search it up. Answer is 6 letters.</div> : null}
       </div>
 
       {/* Challenge 3 */}
