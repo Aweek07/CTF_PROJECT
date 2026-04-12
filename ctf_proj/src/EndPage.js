@@ -58,7 +58,7 @@ export default function EndPage({ timeTaken, onBackToQuestions, finalScore }) {
       <div>
         <h2>What you can learn from this project</h2>
         <p>
-          This exercise was designed to demonstrate how much information is publicly available and how easily it can be pieced together using perfectly legal, open-source resources. We encourage you to be mindful of your digital footprint, respect others' privacy, and always act responsibly. Stay safe online.
+          This project was designed to demonstrate how much information is publicly available and how easily it can be pieced together using perfectly legal, open-source resources. We encourage you to be mindful of your digital footprint, respect others' privacy, and always act responsibly. Stay safe online.
         </p>
       </div>
 

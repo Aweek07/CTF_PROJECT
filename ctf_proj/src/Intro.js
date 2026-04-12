@@ -18,6 +18,7 @@ export default function Intro({ onStart }) {
         <ul className="tech-list">
           <li>HTML</li>
           <li>CSS</li>
+          <li>JavaScript</li>
           <li>React</li>
           <li>NodeJS</li>
           <li>SQL</li>
