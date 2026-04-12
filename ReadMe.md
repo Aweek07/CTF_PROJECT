@@ -89,23 +89,19 @@ git clone https://github.com/Aweek07/CTF_PROJECT.git
 cd CTF_PROJECT/ctf_proj
 ```
 
-### 3. Setup the Database
-1. Open XAMPP and Start the **MySQL** module.
-2. Open your MySQL tool (XAMPP) and import/run the `setup.sql` file.
-
-### 4. Install Dependencies
+### 3. Install Dependencies
 ```bash
 npm install
 npm install mysql2
 ```
 
-### 5. Import Answers into SQL server
+### 4. Import Answers into SQL server
 you will have to run this in the previously used terminal which is open in the `ctf_proj` directory, and run the following command:
 
 ```bash
 "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p < setup.sql
 ```
-### 6. Run the App
+### 5. Run the App
 You will need two terminal windows open inside the `ctf_proj` folder:
 
 **Terminal 1 (Backend):**
