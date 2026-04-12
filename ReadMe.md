@@ -102,7 +102,7 @@ npm install mysql2
 ### 5. Install SQL server
 you will have to install the *SQL community server* if you don't have SQL on your device already.
 
-Install and complete the setup from **[Official SQL]([https://nodejs.org](https://dev.mysql.com/downloads/mysql/8.0.html))** website
+Install and complete the setup from **[Official SQL](https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.45-winx64.msi)** website
 
 ### 6. Import Answers into SQL server
 you will have to run this in the previously used terminal which is open in the `ctf_proj` directory, and run the following command:
