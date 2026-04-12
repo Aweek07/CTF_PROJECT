@@ -20,7 +20,7 @@ Most security platforms have a steep learning curve. Our project is different be
 
 - No need to install anything or use terminal.
   
-- No virtual machines or Linux installations required.
+-No virtual machines or Linux installations required.
     
 - Everything works in the browser.
 
@@ -99,7 +99,18 @@ npm install
 npm install mysql2
 ```
 
-### 5. Run the App
+### 5. Install SQL server
+you will have to install the *SQL community server* if you don't have SQL on your device already.
+
+Install and complete the setup from **[Official SQL]([https://nodejs.org](https://dev.mysql.com/downloads/mysql/8.0.html))** website
+
+### 6. Import Answers into SQL server
+you will have to run this in the previously used terminal which is open in the `ctf_proj` directory, and run the following command:
+
+```bash
+"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p < setup.sql
+```
+### 7. Run the App
 You will need two terminal windows open inside the `ctf_proj` folder:
 
 **Terminal 1 (Backend):**
@@ -133,3 +144,9 @@ npm start
 **College:** NMIMS MPSTME
 
 **Year:** Semester 2 Submission
+
+
+
+
+
+
