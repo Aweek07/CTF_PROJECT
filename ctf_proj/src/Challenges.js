@@ -115,10 +115,13 @@ export default function Challenges(props) {
       <div style={{ backgroundColor: '#111', padding: '16px', border: '1px dashed #00ff41', marginBottom: '32px' }}>
         <h3 style={{ marginTop: '0' }}>RULES FOR THE CTF</h3>
         <ul style={{ margin: '0', paddingLeft: '24px' }}>
-          <li>Do not perform any active attacks (e.g., SQLi, DDoS, password guessing) as this is a simple beginner friendly browser based OSINT ctf.</li>
+          <li>Do not perform any active attacks (e.g., SQLi, DDoS, Flag Bruteforcing) as this is a simple beginner friendly browser based OSINT ctf.</li>
           <li>All necessary information is publicly available using Open Source Intelligence. Use your Search engine (Google, DuckDuckGo, etc.) at free will.</li>
           <li>Read the hints carefully. Flags (Answers) should be in Lower case.</li>
           <li>Hints are available for each flag.</li>
+          <li>Click on submit to verify the answer for each question, the submission attempts are unlimited, but final submission (bottom of the page) will end the challenge.</li>
+          <li>You will be given a single photo clue to start of the challenge in Question 1. You are supposed to find other answers which lead linearly from that single clue.</li>
+          <li>ALL THE BEST! ^_^</li>
         </ul>
       </div>
 
@@ -131,11 +134,11 @@ export default function Challenges(props) {
           </span>
         </div>
         
-        <p>Find the name of the restaurant from the provided photo.</p>
+        <p>Find the name of the restaurant visited by ██████.</p>
         
         <div className="link-group">
           <a href="https://example.com/pizza_photo.jpg" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
-            [Download Pizza Photo]
+            [Download Photo Clue]
           </a>
         </div>
 
@@ -157,7 +160,7 @@ export default function Challenges(props) {
         
         {results[1] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[1] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[1] === true ? <div className="visible-hint">Answer is 12 alphabets.</div> : null}
+        {hintsVisible[1] === true ? <div className="visible-hint">Search for the Name of the restraunt visible in the photo. Answer is 12 alphabets.</div> : null}
       </div>
 
       {/* Challenge 2 */}
@@ -169,13 +172,7 @@ export default function Challenges(props) {
           </span>
         </div>
         
-        <p>What city was the picture taken in? Check the photo metadata (EXIF data).</p>
-        
-        <div className="link-group">
-          <a href="https://example.com/metadata_image.jpg" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
-            [Download Metadata Image]
-          </a>
-        </div>
+        <p>What city was the picture taken in?</p>
 
         <div className="challenge-controls">
           <input 
@@ -195,7 +192,7 @@ export default function Challenges(props) {
         
         {results[2] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[2] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[2] === true ? <div className="visible-hint">Answer is 6 alphabets.</div> : null}
+        {hintsVisible[2] === true ? <div className="visible-hint">Check the photo metadata (EXIF data). Answer is 6 alphabets.</div> : null}
       </div>
 
       {/* Challenge 3 */}
@@ -207,7 +204,7 @@ export default function Challenges(props) {
           </span>
         </div>
         
-        <p>What is this user's avatar of? Inspect the GitHub profile and photo metadata.</p>
+        <p>What is ███████'s Github avatar of?</p>
         
         <div className="challenge-controls">
           <input 
@@ -227,7 +224,7 @@ export default function Challenges(props) {
         
         {results[3] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[3] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[3] === true ? <div className="visible-hint">Answer is 8 alphabets.</div> : null}
+        {hintsVisible[3] === true ? <div className="visible-hint">Inspect the GitHub profile from the photo metadata. Answer is 8 alphabets.</div> : null}
       </div>
 
       {/* Challenge 4 */}
@@ -239,7 +236,7 @@ export default function Challenges(props) {
           </span>
         </div>
         
-        <p>What is his personal email address? A thorough search of the GitHub repositories might reveal it.</p>
+        <p>What is ███████'s personal email address?</p>
         
         <div className="challenge-controls">
           <input 
@@ -259,7 +256,7 @@ export default function Challenges(props) {
         
         {results[4] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[4] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[4] === true ? <div className="visible-hint">Answer contains letters and special characters (standard email format).</div> : null}
+        {hintsVisible[4] === true ? <div className="visible-hint">A thorough search of the GitHub repositories might reveal it. Answer contains letters and special characters.</div> : null}
       </div>
 
       {/* Challenge 5 */}
@@ -323,7 +320,7 @@ export default function Challenges(props) {
         
         {results[6] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[6] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[6] === true ? <div className="visible-hint">Answer is 4 alphabets.</div> : null}
+        {hintsVisible[6] === true ? <div className="visible-hint">Convert binary to ASCII. Answer is 4 alphabets.</div> : null}
       </div>
 
       {/* Challenge 7 */}
