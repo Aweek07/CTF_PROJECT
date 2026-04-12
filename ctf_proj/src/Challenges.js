@@ -112,6 +112,16 @@ export default function Challenges(props) {
     <div className="challenges-section">
       <h1>_OSINT_MODULES_</h1>
       
+      <div style={{ backgroundColor: '#111', padding: '16px', border: '1px dashed #00ff41', marginBottom: '32px' }}>
+        <h3 style={{ marginTop: '0' }}>RULES FOR THE CTF</h3>
+        <ul style={{ margin: '0', paddingLeft: '24px' }}>
+          <li>Do not perform any active attacks (e.g., SQLi, DDoS, password guessing) as this is a simple beginner friendly browser based OSINT ctf.</li>
+          <li>All necessary information is publicly available using Open Source Intelligence. Use your Search engine (Google, DuckDuckGo, etc.) at free will.</li>
+          <li>Read the hints carefully. Flags (Answers) should be in Lower case.</li>
+          <li>Hints are available for each flag.</li>
+        </ul>
+      </div>
+
       {/* Challenge 1 */}
       <div className="challenge-card">
         <div className="challenge-header">
@@ -124,7 +134,7 @@ export default function Challenges(props) {
         <p>Find the name of the restaurant from the provided photo.</p>
         
         <div className="link-group">
-          <a href="#" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
+          <a href="https://example.com/pizza_photo.jpg" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
             [Download Pizza Photo]
           </a>
         </div>
@@ -162,7 +172,7 @@ export default function Challenges(props) {
         <p>What city was the picture taken in? Check the photo metadata (EXIF data).</p>
         
         <div className="link-group">
-          <a href="#" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
+          <a href="https://example.com/metadata_image.jpg" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
             [Download Metadata Image]
           </a>
         </div>
@@ -328,7 +338,7 @@ export default function Challenges(props) {
         <p>Find the final flag located on the target's Instagram account.</p>
         
         <div className="link-group">
-          <a href="#" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
+          <a href="https://instagram.com/target_account" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
             [Go to Instagram]
           </a>
         </div>
