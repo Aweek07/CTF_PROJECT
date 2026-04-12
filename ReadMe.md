@@ -20,7 +20,7 @@ Most security platforms have a steep learning curve. Our project is different be
 
 - No need to install anything or use terminal.
   
--No virtual machines or Linux installations required.
+- No virtual machines or Linux installations required.
     
 - Everything works in the browser.
 
