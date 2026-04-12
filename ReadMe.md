@@ -81,7 +81,7 @@ Most security platforms have a steep learning curve. Our project is different be
 
 ### 1. Download Prerequisites
 *   Install **[Node.js](https://nodejs.org)**
-*   Install **[XAMPP](https://www.apachefriends.org/index.html)** (for MySQL Database)
+*   Install **[Official SQL download](https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.45-winx64.msi)** 
 
 ### 2. Clone the Project
 ```bash
@@ -99,18 +99,13 @@ npm install
 npm install mysql2
 ```
 
-### 5. Install SQL server
-you will have to install the *SQL community server* if you don't have SQL on your device already.
-
-Install and complete the setup by clicking on this **[Official SQL download](https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.45-winx64.msi)** 
-
-### 6. Import Answers into SQL server
+### 5. Import Answers into SQL server
 you will have to run this in the previously used terminal which is open in the `ctf_proj` directory, and run the following command:
 
 ```bash
 "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p < setup.sql
 ```
-### 7. Run the App
+### 6. Run the App
 You will need two terminal windows open inside the `ctf_proj` folder:
 
 **Terminal 1 (Backend):**
