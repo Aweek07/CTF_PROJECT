@@ -300,7 +300,7 @@ export default function Challenges(props) {
           </span>
         </div>
         
-        <p>Decipher the following encrypted code to unlock the next step: mnnuawx_nnwqyc</p>
+        <p>Decipher the following encrypted code to unlock the next step: evpgial_npssks</p>
         
         <div className="challenge-controls">
           <input 
@@ -352,7 +352,7 @@ export default function Challenges(props) {
         
         {results[7] === true ? <div style={{ color: '#00ff41', marginTop: '8px', fontWeight: 'bold' }}>[+] Correct!</div> : null}
         {results[7] === false ? <div style={{ color: 'red', marginTop: '8px', fontWeight: 'bold' }}>[-] Incorrect</div> : null}
-        {hintsVisible[7] === true ? <div className="visible-hint">Answer is 10 alphabets.</div> : null}
+        {hintsVisible[7] === true ? <div className="visible-hint">Answer is 21 characters.</div> : null}
       </div>
 
       {/* Submit Buttons */}
