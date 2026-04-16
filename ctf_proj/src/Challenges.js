@@ -137,7 +137,7 @@ export default function Challenges(props) {
         <p>Find the name of the restaurant visited by ██████.</p>
         
         <div className="link-group">
-          <a href="https://example.com/pizza_photo.jpg" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
+          <a href="/hint.jpg" target="_blank" rel="noreferrer" className="btn-small" style={{border: '1px solid #333', padding: '3px 8px', display: 'inline-block'}}>
             [Download Photo Clue]
           </a>
         </div>
