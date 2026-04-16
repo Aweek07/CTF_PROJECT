@@ -15,4 +15,4 @@ INSERT INTO answers (id, flag) VALUES
 (4, 'mahapatraabheek0@gmail.com'),
 (5, 'github'),
 (6, 'hack'),
-(7, 'hi');
+(7, 'H1DD3N_1N_PL41N_51GH7');
