@@ -1,16 +1,21 @@
 const http = require('http');
-var mysql = require('mysql2');
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('./ctf.db');
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "ctf_db",
-    port: 3306
-});
-
-con.connect(function(err) {
-  console.log("Connected!");
+// Initialize DB if not exists
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS answers (id INTEGER PRIMARY KEY, flag TEXT)`);
+  // Insert dummy data if table empty
+  db.get('SELECT COUNT(*) as count FROM answers', (err, row) => {
+    if (err) return console.error(err);
+    if (row.count === 0) {
+      const stmt = db.prepare('INSERT INTO answers (id, flag) VALUES (?, ?)');
+      stmt.run(1, 'CTF{dummy1}');
+      stmt.run(2, 'CTF{dummy2}');
+      stmt.run(3, 'CTF{dummy3}');
+      stmt.finalize();
+    }
+  });
 });
 
 const server = http.createServer((req, res) => {
@@ -31,99 +36,50 @@ const server = http.createServer((req, res) => {
 
   if (req.method === 'POST' && req.url === '/api/validate') {
     let body = '';
-    
-    req.on('data', chunk => {
-      body += chunk.toString();
-    });
-    
+    req.on('data', chunk => { body += chunk.toString(); });
     req.on('end', () => {
       try {
-        const reqBody = JSON.parse(body || '{}');
-        const userAnswers = reqBody.answers; 
-        
-        if (!Array.isArray(userAnswers)) {
-          return sendJson(200, { score: 0, total: 0 });
-        }
-
-        var sql = "select * from answers";
-        con.query(sql, function(err, result) {
+        const { answers } = JSON.parse(body || '{}');
+        if (!Array.isArray(answers)) return sendJson(200, { score: 0, total: 0 });
+        db.all('SELECT * FROM answers', (err, rows) => {
           if (err) return sendJson(200, { score: 0, total: 0 });
-
-          const rows = result;
           let score = 0;
-          
-          for (let i = 0; i < userAnswers.length; i++) {
-            let userAnswer = userAnswers[i];
-            
-            for (let j = 0; j < rows.length; j++) {
-              let dbRow = rows[j];
-              
-              if (userAnswer.id === dbRow.id) {
-                if (userAnswer.flag) {
-                  let correctFlag = dbRow.flag.toLowerCase();
-                  let submittedFlag = userAnswer.flag.toLowerCase().trim();
-                  
-                  if (submittedFlag === correctFlag) {
-                    score = score + 1;
-                  }
-                }
-              }
+          answers.forEach(userAns => {
+            const dbRow = rows.find(r => r.id === userAns.id);
+            if (dbRow && userAns.flag && userAns.flag.trim().toLowerCase() === (dbRow.flag || '').toLowerCase()) {
+              score++;
             }
-          }
-
-          sendJson(200, { score: score, total: rows.length });
+          });
+          sendJson(200, { score, total: rows.length });
         });
-      } catch (error) {
+      } catch (e) {
         sendJson(200, { score: 0, total: 0 });
       }
     });
+    return;
+  }
 
-  } else if (req.method === 'POST' && req.url === '/api/validate-single') {
+  if (req.method === 'POST' && req.url === '/api/validate-single') {
     let body = '';
-    
-    req.on('data', chunk => {
-      body += chunk.toString();
-    });
-    
+    req.on('data', chunk => { body += chunk.toString(); });
     req.on('end', () => {
       try {
-        const reqBody = JSON.parse(body || '{}');
-        const { id, flag } = reqBody;
-        
-        if (!id || flag === undefined) {
-          return sendJson(200, { correct: false });
-        }
-
-        var sql = "select flag from answers where id = ?";
-        con.query(sql, [id], function(err, result) {
-          if (err) return sendJson(200, { correct: false });
-
-          const rows = result;
-
-          if (rows.length === 0) {
-            return sendJson(200, { correct: false });
-          }
-
-          let isCorrect = false;
-          let correctFlag = rows[0].flag.toLowerCase();
-          
-          if (flag.toLowerCase().trim() === correctFlag) {
-             isCorrect = true;
-          } else {
-             isCorrect = false;
-          }
-
+        const { id, flag } = JSON.parse(body || '{}');
+        if (!id || flag === undefined) return sendJson(200, { correct: false });
+        db.get('SELECT flag FROM answers WHERE id = ?', [id], (err, row) => {
+          if (err || !row) return sendJson(200, { correct: false });
+          const isCorrect = flag.trim().toLowerCase() === (row.flag || '').toLowerCase();
           sendJson(200, { correct: isCorrect });
         });
-      } catch (error) {
+      } catch (e) {
         sendJson(200, { correct: false });
       }
     });
-
-  } else {
-    res.writeHead(404);
-    res.end();
+    return;
   }
+
+  res.writeHead(404);
+  res.end();
 });
 
 const PORT = 3001;
